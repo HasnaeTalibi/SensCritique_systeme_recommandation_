@@ -64,29 +64,29 @@ python recommandation_sys_Demo.py
 
 ---
 
-## Amélioration :
+## Améliorations et recommandations:
 
-### - Utlisation de FAISS représente une solution plus optimale
+- L'utilisation de FAISS représente une solution plus optimale pour ce projet, pourquoi ?
 
-FAISS permet de rechercher très rapidement les vecteurs les plus proches dans une grande base d’embeddings, car il permet :
+L'intégration de FAISS permet de rechercher très rapidement les vecteurs les plus proches dans une grande base d’embeddings, car il permet :
 
 - Eviter de recalculer la similarité cosinus sur toutes les critiques  
 - De charger uniquement les vecteurs du film demandé  
 - Garantir une meilleur scalabilité, chaque film a son propre index
 
-> **Note :** :  
-> FAISS n’a pas été implémenté dans ce projet à cause des conflits de bibliothèques dans mon venv
+> **Note :**  
+> FAISS n’a pas été implémenté dans ce projet à cause des conflits de bibliothèques rencontrés dans mon venv et sur mon système
 
-### Utlisation de Docker pour conteunariser le systeme, facilitera le deploiement du systeme en production
-## Decoupage de la pipeline en des microservices independants (prettraitement, stockage, api) afin de maintenir une flexibilite en monté du deploiement
-## Exposer le systeme via une API REST, testable depuis un navigateur ou un front-end
+- Conteneuriser le système avec Docker facilitera le déploiement et la portabibilité du système en production.
+- La séparartion du pipeline en des microservices independants (prétraitement, stockage, api, etc) permettrait de maintenir une flexibilité et une montée en charge fluide pendantle deploiement
+- Exposer le système via une API REST, permettra de le rendre testable depuis un navigateur ou un front-end
 
 ---
 
-## Utilisation de l'IA dans ce projet :
+## L'utilisation de l'IA dans ce projet :
 L’IA a été utilisée dans ce projet à plusieurs niveaux :
 
 - J'avais utlisé l'IA dans la partie prétraitement du texte pour trouver les bons regex,  pour supprimer les balises HTML, nettoyer les titres et uniformiser les critiques
-- Aussi dans la partie amelioration de mon systeme, pour chercher la meilleure approche d’optimisation des calculs pour une grande base de données (FAISS) 
-- L’IA a également été utilisée pour résoudre les conflits de libraries et ajuster la compatibilité entre sentence-transformers, et torch`  
+- Aussi dans la partie amélioration de mon système, pour chercher la meilleure approche d’optimisation des calculs pour une grande base de données des films (FAISS) 
+- L’IA a également été utilisée pour résoudre les conflits de libraries et ajuster la compatibilité entre sentence-transformers, et torch 
 
