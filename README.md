@@ -39,7 +39,7 @@ Au moment de la requête :
 
 ## Notebook d’accompagnement
 
-Le fichier _sys_recommandation.ipynb_ détaille de manière approfondie :
+Le notebook _sys_recommandation.ipynb_ détaille de manière approfondie :
 - les choix techniques et méthodologiques du projet,  
 - la préparation textuelle (regex, nettoyage HTML, normalisation, concat titre.critique),  
 - la comparaison des modèles d’embeddings,  
@@ -55,6 +55,7 @@ Ce notebook permet de comprendre et reproduire facilement chaque étape du syst�
 ### Préparation de données (offline)
 ```bash
 python batch_preparation.py
+```
 
 ### Lancer le test Online
 ```bash
@@ -65,18 +66,25 @@ python recommandation_sys_Demo.py
 
 ## Amélioration :
 
-## Utlisation de FAISS représente une solution plus optimale
+### - Utlisation de FAISS représente une solution plus optimale
 
-**FAISS (Facebook AI Similarity Search)** permet de rechercher très rapidement les **vecteurs les plus proches** dans une grande base d’embeddings.
+FAISS permet de rechercher très rapidement les vecteurs les plus proches dans une grande base d’embeddings, car il permet :
 
-### 🔍 Avantages :
-- **Vitesse** : évite de recalculer la similarité cosinus sur toutes les critiques  
-- **Mémoire** : charge uniquement les vecteurs du film demandé  
-- **Scalabilité** : chaque film a son propre index, facilement extensible  
-- **Réactivité** : résultats quasi instantanés même avec une base volumineuse  
+- Eviter de recalculer la similarité cosinus sur toutes les critiques  
+- De charger uniquement les vecteurs du film demandé  
+- Garantir une meilleur scalabilité, chaque film a son propre index
 
-> ⚠️ **Note importante** :  
-> FAISS n’a **pas été implémenté dans ce projet final** à cause de **conflits de bibliothèques** rencontrés lors des tests.  
-> Cependant, son **intégration reste la solution la plus optimale** pour rendre le système rapide et scalable sur une grande base multi-films.
+> **Note :** :  
+> FAISS n’a pas été implémenté dans ce projet à cause des conflits de bibliothèques dans mon venv
 
+### Utlisation de Docker pour conteunariser le systeme, facilitera le deploiement du systeme en production
+## Decoupage de la pipeline en des microservices independants (prettraitement, stockage, api) afin de maintenir une flexibilite en monté du deploiement
+## Exposer le systeme via une API REST, testable depuis un navigateur ou un front-end
+
+## Utlisattion de lIA dans ce projet :
+L’IA a été utilisée dans ce projet à plusieurs niveaux :
+
+- J'avais utlisé l'IA dans la partie prétraitement du texte pour trouver les bons regex,  pour supprimer les balises HTML, nettoyer les titres et uniformiser les critiques
+- Aussi dans la partie amelioration de mon systeme, pour chercher la meilleure approche d’optimisation des calculs pour une grande base de données (FAISS) 
+-  L’IA a également été utilisée pour résoudre les conflits de libraries et ajuster la compatibilité entre sentence-transformers, et torch`  
 
