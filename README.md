@@ -28,12 +28,12 @@ Les étapes :
 
 ---
 
-### 2. Mode Online (recherche en direct)
+### 2. Mode Online 
 Au moment de la requête :
 - Le système filtre les critiques du film demandé  
-- Encode la critique lue ("query: ..." pour E5)  
+- Encode la critique lue ("query: ..." pour le syntaxe de E5)  
 - Calcule la similarité cosinus avec les embeddings correspondants  
-- Affiche les Top-N critiques les plus similaires, bbien formatées et nettoyées (balises HTML, ponctuation)
+- Puis affiche les Top-N critiques les plus similaires, bbien formatées et nettoyées (balises HTML, ponctuation)
 
 ---
 
@@ -81,10 +81,12 @@ FAISS permet de rechercher très rapidement les vecteurs les plus proches dans u
 ## Decoupage de la pipeline en des microservices independants (prettraitement, stockage, api) afin de maintenir une flexibilite en monté du deploiement
 ## Exposer le systeme via une API REST, testable depuis un navigateur ou un front-end
 
-## Utlisattion de lIA dans ce projet :
+---
+
+## Utilisation de l'IA dans ce projet :
 L’IA a été utilisée dans ce projet à plusieurs niveaux :
 
 - J'avais utlisé l'IA dans la partie prétraitement du texte pour trouver les bons regex,  pour supprimer les balises HTML, nettoyer les titres et uniformiser les critiques
 - Aussi dans la partie amelioration de mon systeme, pour chercher la meilleure approche d’optimisation des calculs pour une grande base de données (FAISS) 
--  L’IA a également été utilisée pour résoudre les conflits de libraries et ajuster la compatibilité entre sentence-transformers, et torch`  
+- L’IA a également été utilisée pour résoudre les conflits de libraries et ajuster la compatibilité entre sentence-transformers, et torch`  
 
