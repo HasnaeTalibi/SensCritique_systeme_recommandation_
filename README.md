@@ -11,8 +11,8 @@ Ce système utilise les embeddings sémantiques modernes (E5 multilingual) pour 
 ### 1. Mode Offline 
 Pipeline exécuté une seule fois pour nettoyer et vectoriser les données textuelles.
 
-Étapes :
-1. **Importation & nettoyage de données** :  
+Les étapes :
+1. **Importation et nettoyage de données** :  
    - Fusion des deux fichies CSV (`Fight Club`, `Interstellar`)  
    - Suppression des valeurs NaN et des doublons  
    - Suppression des balises HTML, normalisation Unicode, mise en minuscule, et suppression de la ponctuation inutile  
@@ -22,7 +22,7 @@ Pipeline exécuté une seule fois pour nettoyer et vectoriser les données textu
    - Ce modèle est à la fois multilingue, accurate, gratuit, et fonctionne localement
 3. **Persistance** :  
    - 'merged_clean.parquet' → données nettoyées sous format parquet 
-   - 'embeddings.npz' → vecteurs compressés (embeddings)  
+   - 'embeddings.npz' → vecteurs compressés (embeddings) sous format numpy 
    - 'film_index.json' → liste des films disponibles dans les données 
 
 
