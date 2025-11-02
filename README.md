@@ -2,7 +2,7 @@
 
 ## But de projet
 Ce projet vise à recommander les critiques similaires du meme film, à partir d’une critique lue par l’utilisateur.  
-Ce système utilise les embeddings sémantiques modernes (E5 multilingual) pour comprendre le sens des reviews, et calculer la similarité cosinus pour trouver les critiques les plus proches ou similaires.
+Ce système utilise les embeddings sémantiques modernes (E5 multilingual) pour comprendre le sens des reviews, et calculer la similarité cosinus afin de trouver les critiques les plus proches ou similaires.
 
 ---
 
